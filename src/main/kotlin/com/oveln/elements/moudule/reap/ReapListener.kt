@@ -19,7 +19,7 @@ object ReapListener {
                             it?.let { block.world.dropItem(block.location,it) }
                         }
                         blockData.age = 0
-                        block.setBlockData(blockData)
+                        block.blockData = blockData
                     }
                 }
             }

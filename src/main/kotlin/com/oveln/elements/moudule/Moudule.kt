@@ -2,13 +2,12 @@ package com.oveln.elements.moudule
 
 import taboolib.library.xseries.XMaterial
 
-abstract class Moudule(val name: String, val description: String = "") {
+abstract class Moudule(
+    val name: String,
+    val description: String = "", // %%作为换行符
+    val material: XMaterial
+) {
     var able = true
-    var material = XMaterial.REDSTONE_BLOCK
-        private set
-    constructor(name: String, description: String = "" , material: XMaterial):this(name,description) {
-        this.material = material
-    }
     fun Enable() {
         able = true
     }

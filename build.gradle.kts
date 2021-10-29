@@ -5,7 +5,15 @@ plugins {
 }
 
 taboolib {
-    install("common")
+    description {
+        contributors {
+            name("Oveln")
+        }
+        desc("Elements")
+    }
+    install("common", "module-configuration")
+    install("module-nms", "module-nms-util")
+    install("module-ui")
     install("platform-bukkit")
     classifier = null
     version = "6.0.3-18"

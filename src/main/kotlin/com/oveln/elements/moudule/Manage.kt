@@ -3,6 +3,7 @@ package com.oveln.elements.moudule
 import com.oveln.elements.moudule.anvildyeing.AnvilDyeing
 import com.oveln.elements.moudule.feathercutting.FeatherCutting
 import com.oveln.elements.moudule.reap.Reap
+import com.oveln.elements.moudule.tuningstick.TuningStick
 import com.oveln.elements.utils.Config
 import org.bukkit.enchantments.Enchantment
 import org.bukkit.inventory.ItemFlag
@@ -17,7 +18,8 @@ object Manage {
         listOf<Moudule>(
             AnvilDyeing,
             Reap,
-            FeatherCutting
+            FeatherCutting,
+            TuningStick
         )
     }
     val ManageGUI by lazy {

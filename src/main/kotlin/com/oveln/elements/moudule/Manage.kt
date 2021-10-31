@@ -3,6 +3,7 @@ package com.oveln.elements.moudule
 import com.oveln.elements.moudule.anvildyeing.AnvilDyeing
 import com.oveln.elements.moudule.feathercutting.FeatherCutting
 import com.oveln.elements.moudule.reap.Reap
+import com.oveln.elements.moudule.slabhelper.SlabHelper
 import com.oveln.elements.moudule.tuningstick.TuningStick
 import com.oveln.elements.utils.Config
 import org.bukkit.enchantments.Enchantment
@@ -19,7 +20,8 @@ object Manage {
             AnvilDyeing,
             Reap,
             FeatherCutting,
-            TuningStick
+            TuningStick,
+            SlabHelper
         )
     }
     val ManageGUI by lazy {

@@ -4,7 +4,6 @@ import org.bukkit.Material
 import org.bukkit.entity.Chicken
 import org.bukkit.event.entity.EntityDropItemEvent
 import taboolib.common.platform.event.SubscribeEvent
-import taboolib.common.platform.function.info
 
 object LayEgglistener {
     @SubscribeEvent

@@ -5,14 +5,14 @@ import org.bukkit.inventory.ItemFlag
 import taboolib.library.xseries.XMaterial
 import taboolib.module.ui.buildMenu
 import taboolib.module.ui.type.Linked
+import taboolib.platform.util.Slots
 import taboolib.platform.util.buildItem
-import taboolib.platform.util.inventoryCenterSlots
 
 object Helper {
     val HelpGUI by lazy {
         buildMenu<Linked<Moudule>>("Elements模块") {
             rows(6)
-            slots(inventoryCenterSlots)
+            slots(Slots.CENTER)
             handLocked(true)
             elements {
                 Manage.Moudles
@@ -21,7 +21,7 @@ object Helper {
                 buildItem(element.material) {
                     name = "&f${element.name}"
                     lore.add(" ")
-                    element.description.split("%%").forEach() {
+                    element.description.split("%%").forEach {
                         lore.add("&e$it")
                     }
                     lore.add(" ")

@@ -2,13 +2,10 @@ package com.oveln.elements.moudule.feathercutting
 
 import com.oveln.elements.utils.Tools.colorful
 import org.bukkit.Material
-import org.bukkit.attribute.Attribute
 import org.bukkit.entity.Ageable
 import org.bukkit.entity.Chicken
-import org.bukkit.entity.Damageable
 import org.bukkit.event.player.PlayerInteractAtEntityEvent
 import taboolib.common.platform.event.SubscribeEvent
-import taboolib.common.platform.function.info
 import taboolib.common.util.random
 import taboolib.library.xseries.XMaterial
 import taboolib.platform.util.buildItem

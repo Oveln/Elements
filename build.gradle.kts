@@ -1,7 +1,7 @@
 plugins {
     java
-    id("io.izzel.taboolib") version "1.30"
-    id("org.jetbrains.kotlin.jvm") version "1.5.10"
+    id("io.izzel.taboolib") version "1.56"
+    id("org.jetbrains.kotlin.jvm") version "1.9.20-Beta2"
 }
 
 taboolib {
@@ -16,7 +16,7 @@ taboolib {
     install("module-ui")
     install("platform-bukkit")
     classifier = null
-    version = "6.0.3-18"
+    version = "6.0.12-26"
 }
 
 repositories {
@@ -36,5 +36,5 @@ tasks.withType<JavaCompile> {
 
 configure<JavaPluginConvention> {
     sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_17
 }

@@ -1,10 +1,11 @@
 package com.oveln.elements.moudule.anvildyeing
 
+import org.bukkit.entity.Player
 import org.bukkit.event.inventory.InventoryClickEvent
 import org.bukkit.event.inventory.PrepareAnvilEvent
 import org.bukkit.inventory.AnvilInventory
 import taboolib.common.platform.event.SubscribeEvent
-import taboolib.module.nms.i18n.I18n
+import taboolib.module.nms.getI18nName
 import taboolib.platform.util.buildItem
 
 object AnvilListener {
@@ -19,7 +20,7 @@ object AnvilListener {
                 if (AnvilDyeing.Dyes.containsKey(dye.type)) {
                     event.result = buildItem(item) {
                         name ="&${AnvilDyeing.Dyes[dye.type]}" +
-                                (if (inv.renameText == "") I18n.instance.getName(it) else inv.renameText)
+                                (if (inv.renameText == "")  it.getI18nName(event.view.player as Player) else inv.renameText)
                         colored()
                     }
                 }

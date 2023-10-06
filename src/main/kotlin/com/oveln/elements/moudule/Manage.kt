@@ -11,12 +11,12 @@ import org.bukkit.inventory.ItemFlag
 import taboolib.library.xseries.XMaterial
 import taboolib.module.ui.buildMenu
 import taboolib.module.ui.type.Linked
+import taboolib.platform.util.Slots
 import taboolib.platform.util.buildItem
-import taboolib.platform.util.inventoryCenterSlots
 
 object Manage {
     val Moudles by lazy {
-        listOf<Moudule>(
+        listOf(
             AnvilDyeing,
             Reap,
             FeatherCutting,
@@ -27,7 +27,7 @@ object Manage {
     val ManageGUI by lazy {
         buildMenu<Linked<Moudule>>("Elements模块设置") {
             rows(6)
-            slots(inventoryCenterSlots)
+            slots(Slots.CENTER)
             handLocked(true)
             elements {
                 Moudles
@@ -36,7 +36,7 @@ object Manage {
                 buildItem(element.material) {
                     name = "&f${element.name}"
                     lore.add(" ")
-                    element.description.split("%%").forEach() {
+                    element.description.split("%%").forEach {
                         lore.add("&e$it")
                     }
                     lore.add(" ")
@@ -62,13 +62,13 @@ object Manage {
                     }
                 }
             onClick { event, element ->
-                if (element.able) element.Disable()
-                else element.Enable()
+                if (element.able) element.disable()
+                else element.enable()
                 event.inventory.setItem( event.rawSlot,
                     buildItem(element.material) {
                         name = "&f${element.name}"
                         lore.add(" ")
-                        element.description.split("%%").forEach() {
+                        element.description.split("%%").forEach {
                             lore.add("&e$it")
                         }
                         lore.add(" ")
@@ -83,8 +83,8 @@ object Manage {
     }
     fun load() {
         Moudles.forEach {
-            if (Config.Moudele.getBoolean(it.name)) it.Enable()
-            else it.Disable()
+            if (Config.Moudele.getBoolean(it.name)) it.enable()
+            else it.disable()
         }
     }
     fun save() {

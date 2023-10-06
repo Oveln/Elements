@@ -15,7 +15,7 @@ object ReapListener {
                 val blockData = block.blockData
                 if (blockData is Ageable) {
                     if (blockData.age == blockData.maximumAge) {
-                        block.drops.forEach() {
+                        block.drops.forEach {
                             it?.let { block.world.dropItem(block.location,it) }
                         }
                         blockData.age = 0

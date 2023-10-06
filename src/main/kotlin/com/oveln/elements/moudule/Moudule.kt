@@ -8,10 +8,10 @@ abstract class Moudule(
     val material: XMaterial
 ) {
     var able = true
-    fun Enable() {
+    fun enable() {
         able = true
     }
-    fun Disable() {
+    fun disable() {
         able = false
     }
 }

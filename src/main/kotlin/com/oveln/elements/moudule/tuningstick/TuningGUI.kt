@@ -16,8 +16,8 @@ class TuningGUI(noteblock: Block){
     val GUI by lazy {
         buildMenu<Basic>("调音") {
             rows(5)
-            NoteSlot.forEachIndexed() { i , it ->
-                it.forEachIndexed() {j, slotid ->
+            NoteSlot.forEachIndexed { i , it ->
+                it.forEachIndexed {j, slotid ->
                     set(slotid,
                         buildItem(NoteIcon[j]) {
                             name = "&${if (NoteIsable[i][j]!=0) "e" else "8"}${NoteName[j]}音"
@@ -32,7 +32,7 @@ class TuningGUI(noteblock: Block){
                     )
                 }
             }
-            onClick() {event->
+            onClick {event->
                 event.isCancelled = true
                 val note = FindNote(event.rawSlot,event.clickEvent().isRightClick)
                 note?.let {
@@ -47,8 +47,8 @@ class TuningGUI(noteblock: Block){
     }
     //找到被点击格子对应的音符
     fun FindNote(slotID: Int,sharped: Boolean): Note? {
-        NoteSlot.forEachIndexed() { i, it ->
-            it.forEachIndexed() { j, slotid ->
+        NoteSlot.forEachIndexed { i, it ->
+            it.forEachIndexed { j, slotid ->
                 if (slotid == slotID) {
                     when(NoteIsable[i][j]) {
                         -1 -> {
